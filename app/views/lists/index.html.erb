@@ -1,8 +1,23 @@
-<h1>Lists#index</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= list.name %> <%= link_to 'Show', list %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.chiswickcinema.co.uk/wp-content/uploads/2021/05/Untitled-design-22.jpg);">
+  <div class="container">
+    <h1>Your Movies.<strong>Your watchlist.</strong></h1>
+    <p>Save, recommend, rate.</p>
+    <%= link_to 'Start now', new_list_path, class: "btn btn-ghost" %>
+  </div>
+</div>
 
-<%= link_to 'Add a new list', new_list_path %>
+<div class="list-title">
+  <h1>My Lists</h1>
+  <%= link_to 'Add a new list', new_list_path, class: "btn btn-success" %>
+</div>
+
+<div class="container list-container py-5" id="my-lists-link">
+  <div class="row card-container">
+    <% @lists.each do |list| %>
+    <div class="card-category col-xs-6 col-sm-3 col-md-3 mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nft1-13-1571824576.jpg?crop=1xw:1xh;center,top&resize=480:*)">
+      <%= list.name %>
+      <%= link_to 'Show', list %>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_08_19_100504) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_08_19_100504) do
     t.string "title"
     t.text "overview"
     t.string "poster_url"
-    t.integer "rating"
+    t.float "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

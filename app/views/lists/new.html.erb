@@ -1,5 +1,7 @@
-<h1>Lists#new</h1>
 
+<h1>Create a new list</h1>
+
+<div class="new-list-container rounded p-3 shadow">
 <%= simple_form_for(@list) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -12,3 +14,4 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+</div>
