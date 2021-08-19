@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :lists
+  root to: 'lists#index'
+  resources :lists, only: [ :index, :show, :new, :create ] do
+    # need to nest bookmark actions as they are collection
+    # collection actions run without the need for id unlike member
+    resources :bookmarks, only: [ :new, :create ]
+  end
+  resources :bookmarks, only: [ :destroy ]
 end
