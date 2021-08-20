@@ -5,6 +5,7 @@
     <% @list.bookmarks.each do |bookmark| %>
       <li class="list-group-item">
         <%= bookmark.comment %>
+        <%= bookmark.movie.title %>
         <%= link_to 'delete', bookmark_path(bookmark), method: :delete %>
       </li>
     <% end %>
