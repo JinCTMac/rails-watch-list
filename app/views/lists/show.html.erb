@@ -1,6 +1,6 @@
-<h1><%= @list.name %></h1>
+<h1 id="bookmarks-title"><%= @list.name %></h1>
 
-<div class="container">
+<div class="bookmarks-container">
   <ul class='list-group'>
     <% @list.bookmarks.each do |bookmark| %>
       <li class="list-group-item">
@@ -12,6 +12,6 @@
 </div>
 
 <div class="button-container">
-  <%= link_to 'Lists', lists_path, class: "btn btn-primary" %>
-  <%= link_to 'Add a new bookmark', new_list_bookmark_path(params[:id]), class: "btn btn-success" %>
+  <%= link_to 'Lists', lists_path, class: "btn btn-primary list-button" %>
+  <%= link_to 'Add a new bookmark', new_list_bookmark_path(params[:id]), class: "btn btn-success new-bookmark-button" %>
 </div>
