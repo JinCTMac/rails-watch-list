@@ -1,15 +1,26 @@
 <h1 id="bookmarks-title"><%= @list.name %></h1>
 
+<% if @list.photo.attached? %>
+<%= cl_image_tag @list.photo.key, height: 500, width: 400, crop: :fill, class: "show-image" %>
+<% else %>
+<img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nft1-13-1571824576.jpg?crop=1xw:1xh;center,top&resize=480:*" alt="some picture">
+<% end %>
+
 <div class="bookmarks-container">
-  <ul class='list-group'>
+  <div class="row">
     <% @list.bookmarks.each do |bookmark| %>
-      <li class="list-group-item">
-        <%= bookmark.comment %>
-        <%= bookmark.movie.title %>
-        <%= link_to 'delete', bookmark_path(bookmark), method: :delete %>
-      </li>
+      <div class="card-trip col-md-4 col-sm-4">
+        <%= image_tag bookmark.movie.poster_url, alt: "movie-picture", width: 100 %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= bookmark.movie.title %></h2>
+            <p><%= bookmark.movie.overview %></p>
+          </div>
+        </div>
+        <%= link_to 'Delete', bookmark_path(bookmark), method: :delete, class: "btn btn-danger card-button" %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>
 
 <div class="button-container">

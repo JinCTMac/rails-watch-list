@@ -12,16 +12,13 @@
 </div>
 
 <div class="container list-container py-5" id="my-lists-link">
-  <div class="list-title">
-    <h1>My Lists</h1>
-    <%= link_to 'Add a new list', new_list_path, class: "btn btn-success" %>
-  </div>
   <div class="row card-container">
     <% @lists.each do |list| %>
-    <div class="card-category col-xs-6 col-sm-3 col-md-3 mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nft1-13-1571824576.jpg?crop=1xw:1xh;center,top&resize=480:*)">
-      <%= list.name %>
-      <%= link_to 'Show', list %>
+    <%= link_to list, class: "card-category col-sm-3 col-md-3", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nft1-13-1571824576.jpg?crop=1xw:1xh;center,top&resize=480:*); text-decoration: none;" do %>
+    <div>
+      <p class="card-name"><%= list.name %></p>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>

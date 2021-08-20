@@ -54,4 +54,10 @@ Movie.create(title: "Terminator 2",
   rating: 8.5)
 puts "Terminator 2 was added"
 
+Movie.create(title: "Black Beauty",
+  overview: "Born free in the American West, Black Beauty is a horse rounded up and brought to Birtwick Stables, where she meets spirited teenager Jo Green. The two forge a bond that carries Beauty through the different chapters, challenges and adventures.",
+  poster_url: "https://image.tmdb.org/t/p/original/5ZjMNJJabwBEnGVQoR2yoMEL9um.jpg",
+  rating: 8.6)
+puts "Black Beauty was added"
+
 puts "#{Movie.count} Movies created"

@@ -19,5 +19,43 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin: 5px;
-  width: 20%;
+}
+
+.card-category:hover {
+  color: white;
+}
+
+.card-trip {
+  overflow: hidden;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 0 0 0 16px;
+  padding: 0;
+}
+
+.card-trip-infos {
+  padding: 10px;
+}
+
+.card-trip>img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-button {
+  margin: 0 10px 10px 10px;
 }
