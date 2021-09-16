@@ -1,18 +1,23 @@
 
-<h1>Create a new list</h1>
+<div class="container">
+  <div class="row new-list-row">
+    <div class="col-sm-12 col-md-8">
+      <div class="new-list-container rounded p-3 shadow">
+        <h1>Create a new list</h1>
+        <%= simple_form_for(@list) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<div class="new-list-container rounded p-3 shadow">
-<%= simple_form_for(@list) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <div class="form-inputs">
+            <%= f.input :name %>
+            <%= f.input :photo, as: :file %>
+          </div>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
+          <div class="form-actions btn btn-primary">
+            <%= f.button :submit %>
+          </div>
+      <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions btn btn-primary">
-    <%= f.button :submit %>
-  </div>
-<% end %>
 </div>
